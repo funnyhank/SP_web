@@ -34,8 +34,8 @@ except KeyError:
 # 因为用户列表不包含敏感信息且很少变动，我们可以直接在代码中定义
 # 如果用户较多或需要动态管理，则需要另外考虑方案
 users_conf = [
-  {"username": "admin", "password": "your_admin_password", "role": "admin"},
-  {"username": "user", "password": "your_user_password", "role": "user"}
+  {"username": "admin", "password": "SR123456", "role": "admin"},
+  {"username": "user", "password": "123456SR", "role": "user"}
 ]
 
 log_conf = st.secrets["logging"]
