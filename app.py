@@ -140,18 +140,19 @@ def main_app():
         tabs.append("数据写入")
         tabs.append("用户管理")
 
-    selected_tab = st.tabs(tabs)
+    tab_titles = st.tabs(tabs)
 
-    if "数据查询" in selected_tab:
-        with selected_tab[0]:
+    # 根据用户选择的标签页来渲染内容
+    if "数据查询" in tabs:
+        with tab_titles[tabs.index("数据查询")]:
             data_query()
 
-    if "数据写入" in selected_tab and st.session_state.role == "admin":
-        with selected_tab[1]:
+    if "数据写入" in tabs and st.session_state.role == "admin":
+        with tab_titles[tabs.index("数据写入")]:
             data_write()
 
-    if "用户管理" in selected_tab and st.session_state.role == "admin":
-        with selected_tab[2]:
+    if "用户管理" in tabs and st.session_state.role == "admin":
+        with tab_titles[tabs.index("用户管理")]:
             user_management()
 
 
